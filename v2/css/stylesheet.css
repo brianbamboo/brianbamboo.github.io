@@ -1,0 +1,66 @@
+div.body {
+	padding:10px 10px 10px 10px;
+}
+
+div.about-me {
+	padding:10px 10px 10px 10px;
+	background-color:#f0f0f0;
+}
+
+div.projects {
+	padding:25px 10px 25px 10px;
+	background-color:#ffffff;
+}
+
+div.contact {
+	padding:25px 10px 25px 10px;
+	background-color:#f0f0f0;
+}
+
+div.text-wrapper {
+	padding:25px 10px 10px 25px;
+	text-align:left;
+}
+
+div.img-wrapper {
+	padding:25px 10px 10px 10px;
+	min-width: 200px;
+	vertical-align: top;
+}
+
+i {
+	display:inline-block;
+	border-radius:55px;
+	padding: 10px 10px 10px 10px;
+	background-color:#888;
+	color:white;
+}
+
+i:hover {
+	background-color:#ddd;
+}
+
+.fa-twitter {
+	background-color:#00aced;
+}
+
+.fa-twitter:hover {
+	background-color:#ddd;
+}
+
+.fa-linkedin {
+	background-color:#007bb5;
+
+}
+
+.fa-linkedin:hover {
+	background-color:#ddd;
+}
+
+img {
+	width:200px;
+}
+
+img.project {
+	width:350px;
+}

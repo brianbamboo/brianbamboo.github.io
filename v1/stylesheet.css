@@ -1,0 +1,42 @@
+h1 {
+	font-family:sans-serif;
+	font-size:22px;
+}
+
+p {
+	font-family:sans-serif;
+}
+
+li {
+	font-family:sans-serif;
+}
+
+div {
+	padding:20px;
+}
+
+.container {
+	position:relative;
+}
+
+#description {
+	width:400px;
+	position:relative;
+	float:left;
+}
+
+#information {
+	width:400px;
+	position:relative;
+	float:left;
+}
+
+#animation {
+	width:400px;
+	float:left;
+}
+
+#fourth {
+	width:400px;
+	float:left;
+}

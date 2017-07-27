@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>memphis</title>
+        
+        <!--d3.js-->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="https://d3js.org/d3-color.v1.min.js"></script>
+		<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+        <!--font-awesome-->
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+        <!--custom stylesheet-->
+        <link rel="stylesheet" href="css/stylesheet.css">
+    </head>
+    <body>
+
+    <div class="container-fluid">
+
+    	<div class="row">
+    		<div class="col-sm-2">
+    		</div>
+    		<div class="col-sm-8">
+	    		<div class="text-center">
+	    			<h2>The Merger of Memphis City and Shelby County Schools<h2>
+	    			<h3><em>An Overview</em></h3>
+	    		</div>
+	    	</div>
+	    	<div class="col-sm-2">
+	    	</div>
+	    </div>
+
+	    <br>
+
+	    <div class="row text-center">
+	    	<div class="col-sm-2">
+    		</div>
+    		<div class="col-sm-5">
+	    		<div class="text-left">
+
+	    			<p id="body1">On March 8, 2011, Memphis residents voted to disband Memphis City schools, effectively merging it with the Shelby County School district.<br></p>
+
+                    <p>Since arriving in Memphis and hearing about this merger, I've been wanting to understand it better. I'm curious about the causes and effects of the merger on Memphis and Shelby County schools. This is my attempt at a simple overview at what I've learned in trying to make sense of this event, as well as some light practice with Bootstrap layouts and d3.js graphics.</p>
+    			</div>
+    		</div>
+    		<div class="col-sm-3" id="svg1">
+    		</div>
+    		<div class="col-sm-2">
+    		</div>
+    	</div>
+
+    	<div class="row text-left">
+    		<div class="col-sm-2"></div>
+    		<div class="col-sm-8">
+    				<h4>Memphis School Funding Before The Merger</h4>
+
+    				<p>Tennessee state law mandates that the county, not individuals, provide for the education of students.</p>
+
+    				<p>Prior to the school merger, all Shelby County residents (i.e. Memphis City and incorporated suburban municipalities like Bartlett, Collierville, and Germantown) were assessed the same property tax, a portion of which was allocated for the Shelby County General Education Fund. After taxes were collected, funds were then re-allocated to all Shelby County schools equally based off an Average Daily Attendance split, which is a metric calculated from total student attendance. More information on how Average Daily Attendance is calculated can be found <a href="https://mytennesseepublicschools.net/theschoolsystem/funding/">here.</a></p>
+
+                    <p>However, because the suburban municipalities surrounding Memphis tended to be much more affluent, the suburban residents contributed a much greater number of dollars to the total Shelby County General Education Fund than city residents did. In turn, this meant that a relatively disproportionate amount of suburban property tax went towards funding Memphis City schools, due to the much larger population of city students.</p>
+
+                    <div id="taxsvg" class="text-center">
+                    <h5>School Tax Rates, Shelby County, 2004 - 2016</h5>           
+                    </div>
+                    <div class="text-center">
+                    <h5>All Tax Rates, Shelby County, 2004 - 2016</h5>
+                    <svg width="800" height="200" id="taxsvg2"></svg>
+                    </div>
+
+                    <p>How much are property taxes in Shelby County and how have they changed over time? When talking about the abstract idea of "increasing taxes", I always wonder what the actual numbers are, and so I decided to look them up from the Shelby County Trustee's Office, which provides the rates from at least 2004 - present.</p>
+
+    				
+
+    				<h4>The Impact of a Special School District</h4>
+    				<p>Since 1999, the (former) superintendent of Shelby County Schools, David Pickler, had been pushing for special district status for Shelby County Schools.</p>
+
+    				<p>At the time, Pickler stated that his motivation for moving for special district status for SCS was solely to prevent consolidation, arguing that consolidation would result in tax increases for everyone across the board, as a merger would force the school systems to grapple with the cost of aligning the administration of Memphis City Schools and Shelby County Schools. Some of these costs included the fact that Memphis City Schools contracted out bus operation, while SCS owned their buses; MCS teachers were unionized, while SCS teachers were not.</p>
+
+    				<p>However, with the conferring of special school district status, the district would also gain local tax authority. Many MCS school board members feared that with local tax authority, SCS might changed the funding formula to keep suburban tax dollars within suburban schools.</p>
+
+    				<p>In 2008, the University of Memphis released a report detailing the possible impact of a special school district on Memphis City and Shelby County Schools.</p>
+
+    				<p>Under the old county-wide tax rate of 4.04%, half of the tax revenue went towards the Shelby County General Education Fund. If the funding system were not changed, the only impact of a special school district would be the freezing of district boundaries.</p>
+
+    				<p>The report also detailed the impact of a special school district if the funding system were changed. In this alternative situation, each local district would be able to levy a local property tax for education that would replace the county property tax rate of 2.02% for education, and whose dollars would stay within the district.</p>
+
+    				<p>Under projections provided in this report, to maintain the current level of funding for Memphis City and Shelby County schools, respectively, the local tax levied on residents would have to be increased to 2.8 - 3.1% for Memphis, but only 1.5 - 1.8% for Shelby County. Clearly, if SCS were granted special district status and the district then moved to change the funding system, this would save the more affluent Shelby County residents tax dollars at the cost of Memphis City residents.</p>
+
+    				<p>It is worth noting that even though special school districts in Tennessee are granted taxing authority, it is unlawful for school boards to set new tax rates without the approval of the state legislature. Thus, any effort to set a local tax rate would have had to first pass through the legislature.</p> 
+
+    				<h4>How The Nov. 8 Elections of 2010 Changed The Tone</h4>
+
+    				<p>The Tennessee state elections of Nov. 2, 2010 saw the election of a GOP majority to the state legislature. MCS school board members feared that Pickler's push for special district status for Shelby County Schools would find new support at the state level and finally pass, bringing with its passage a risk of a funding system change for Memphis City Schools and depriving MCS of much-needed suburban property tax dollars, at least in the opinion of many on the Memphis City School board.</p>
+
+                    <p>Seeking to pre-empt such a move, the MCS school board voted to surrender their charter.</p>
+    				
+                    </p>
+
+    				<div id="svg2" class="text-center">
+                    <h5>Shelby County Education Fund Breakdown</h5>	
+                    
+    				</div>
+
+                    <h4>My Thoughts and Reflections</h4>
+                    <p>This project was pretty illuminating for me. I was able to spend some time researching the circumstances surrounding the SCS-MCS merger de-merger and my opinions on the situation were changed.</p>
+
+                    <p>In my mind, the core of the issue is really a fundamental disagreement of who should fund whose public education. Across the nation, public school districts are funded through a combination of federal, state and local funds. Local funds are usually raised through property taxes, which is usually some percentage tax on the dollar.</p>
+
+                    <p>One might call this fair, since all individuals are taxed at a similar percentage rate. However, funding is not disbursed to your own district at a rate proportional to the dollars in property tax you're paying, but at a rate proportional to the level of student attendance in the district, which is where the tension lies.</p>
+
+                    <p>The argument against the merger was always about money and taxes. It didn't take into account a notion of equity; instead, suburban taxpayers argued, "I'm already contributing more dollars toward city education than I'm getting back relative to the taxes I'm paying. And now you want to raise my taxes even more?"</p>
+
+                    <p>On the other side, the argument in favor of the merger was about money and taxes as well, but it also took, though arguably in a flawed fashion, a notion of equity into account. Proponents argued against the idea of having "separate but unequal" systems, bringing to mind Brown v. Board of Education.
+
+                    <p>This is a reality that I'm still trying to grapple with. In this country, we no longer have explicity segregated educational institutions, but we continue to have de facto segregation, especially as income gaps grow wider. However, because the idea of meritocracy is so burned into the American psyche, we don't view income segregation as a flaw of our society in the way that we saw explicit racial segregation in the 1960s - we see it instead as the success of ourselves juxtaposed against the failure and inferiority of others.</p>
+
+                    <p>This is why the racial argument fails to convince the affluent (and often, conveniently (or unconveniently) white). An accusation of racism or discrimination is simply ineffective when in the eyes of the narrative of meritocracy, you have simply not worked hard enough. In the eyes of the meritocracy, the barriers have already been torn down. How much more will you ask for until you finally start taking responsibility for yourself?</p>
+
+                    <p>The equity argument is the truth in many ways. But the equity argument is not effective. Demanding someone to atone for the sins of prior generations is never a convincing argument.</p>
+
+                    <p>In the end, I don't believe that the merger-de-merger had a positive effect on Memphis City Schools or Shelby County Schools. I believe that it only hurt what little trust there existed previously between Memphis and the municipalities, and didn't improve the situation in any way.</p>
+
+                    <p>I suppose the reason that the MCS school board voted in favor of the merger was because of a lack of trust in the first place. But notably, the aggression of the charter surrender vote </p>
+
+    				<h4>Sources</h4>
+
+                    <p>Here are all the great resources that I learned from in the process of trying to understand this issue better. I highly recommend reading them to get a clearer picture of the merger than I was able to provide here!</p>
+    				<ul>
+    					<li><a href="http://www.marknorris.org/blog1/2010/12/01/memphis-shelby-county-schools-offered-time-to-negotiate/">Memphis, Shelby County schools offered time to negotiate.</a>  Jane Roberts, Memphis Commercial Appeal. December 1, 2010.</li>
+    					<li><a href="https://www.memphisdailynews.com/editorial/ArticleEmail.aspx?id=55063">MCS Board Votes To Surrender Charter</a>. Bill Dries, Memphis Daily News. Dec 21, 2010.</li>
+    					<li><a href="http://s3.documentcloud.org/documents/25614/impact-spec-school-districtlr.pdf">Impact of a Special School District On Memphis and Shelby County</a>. Regional Economic Development Center, The University of Memphis. May 2008.</li>
+    					<li><a href="http://www.shelbycountytrustee.com/index.aspx?NID=246">Shelby County Tax Rates</a>. Shelby County Trustee's Office. Accessed July 2017.</li>
+                        <li><a href="http://www.edweek.org/ew/articles/2013/07/10/36memphis.h32.html">Memphis-Shelby Schools Merge, Amid Uncertainty</a>. Jaclyn Zubrzycki, Education Week. July 9, 2013.</li>
+                        <li><a href="http://blogs.edweek.org/edweek/District_Dossier/2010/12/memphis_school_board_to_allow.html">Memphis School Board to Allow Consolidation Vote</a>. Christina Samuels, Education Week. December 21, 2010.</li>
+                        <li><a href="http://blogs.edweek.org/edweek/District_Dossier/2012/11/guest_blog_post_by_jaclyn_3.html">Shelby County Suburbs Can't Ditch Memphis (Yet), Judge Rules</a>. Jackie Zubrzycki, Education Week. November 30, 2012.</li>
+                        <li><a href="http://www.edweek.org/ew/articles/2011/03/07/23memphis.h30.html">Memphis Voters to Weigh In On Merger Proposal</a>. Christina A. Samuels, Education Week. March 7, 2011.</li>
+                        <li><a href="https://www.memphisdailynews.com/news/2009/sep/25/carpenter-proposes-singlesource-education-funding/">Carpenter Proposes Single-Source Education Funding.</a> Bill Dries, Memphis Daily News. Sep 25, 2009.</li>
+                        <li><a href="http://www.edweek.org/ew/articles/2013/04/24/29brief-b2.h32.html">Memphis Suburbs Moving Closer to Avoiding Merger.</a> Jaclyn Zubrzycki, Education Week. April 23, 2013.</li>
+                        <li><a href="https://www.memphisdailynews.com/news/2009/aug/3/compromise-101-whos-going-to-fund-the-schools//print">Compromise 101: Who's going to fund the schools?</a> Bill Dries, Memphis Daily News. August 3, 2009.</li>
+                        <li><a href="http://www.npr.org/templates/story/story.php?storyId=134393582">NPR: Memphis Residents Vote To Disband Schools.</a> March 9, 2011.</li>
+                        <li><a href="http://www.nytimes.com/2011/01/28/us/28memphis.html">Memphis to Vote on Transferring School System to County</a> Campbell Robertson, New York Times. Jan 27, 2011.</li>
+                        <li><a href="http://www.wmcactionnews5.com/story/13538539/shelby-county-memphis-city-schools-may-spar-over-special-district-status">Shelby County, Memphis City Schools may spar over 'specal district' status.</a> Lori Brown, WMC Action News 5. Nov 19, 2010.</li>
+                        <li><a href="http://www.chalkbeat.org/posts/tn/2017/06/21/memphis-shelby-county-spotlighted-in-national-report-on-school-district-secession/">Memphis-Shelby County spotlighted in national report on school district secession.</a> Caroline Bauman, Chalkbeat. June 21, 2017.</li>
+
+    				</ul>
+    		</div>
+    		<div class="col-sm-2"></div>
+    </div>
+
+    <script>
+    	// Data
+    	var scstaxrate = [
+    	{ year: 2004, rate: 2.03 },
+    	{ year: 2005, rate: 2.02 },
+    	{ year: 2006, rate: 2.02 },
+    	{ year: 2007, rate: 2.02 },
+    	{ year: 2008, rate: 2.02 },
+    	{ year: 2009, rate: 1.98 },
+    	{ year: 2010, rate: 1.90 },
+    	{ year: 2011, rate: 1.91 },
+    	{ year: 2012, rate: 1.91 },
+    	{ year: 2013, rate: 2.14 },
+    	{ year: 2014, rate: 2.14 },
+    	{ year: 2015, rate: 2.14 },
+    	{ year: 2016, rate: 2.14 }
+    	];
+
+    	// Set constants
+    	var padding = 25;
+    	var wtax = 500;
+    	var htax = 125;
+
+    	// Create scales and axes
+    	var xScale = d3.scaleBand()
+				.domain(scstaxrate.map(function(d) {
+					return d.year;
+				}))
+				.rangeRound([0, wtax])
+				.padding(0.5);
+
+		var yScale = d3.scaleLinear()
+				.domain([0, d3.max(scstaxrate, function(d) {
+					return d.rate;
+				})])
+				.range([0,htax - padding]);
+
+		var xAxis = d3.axisBottom()
+			.scale(xScale)
+			.tickFormat(d3.format("d"));
+
+    	var taxsvg = d3.select("#taxsvg")
+    		.append("svg")
+    		.attr("width", wtax)
+    		.attr("height", htax);
+
+    	taxsvg.selectAll("rect")
+    		.data(scstaxrate, function(d) {
+    			return d.year;
+    		})
+    		.enter()
+    		.append("rect")
+    		.attr("width", xScale.bandwidth())
+    		.attr("height", function(d,i) {
+    			return yScale(d.rate);
+    		})
+    		.attr("x", function(d,i) {
+    			return xScale(d.year);
+    		})
+    		.attr("y", function(d,i) {
+    			return htax - yScale(d.rate) - padding;
+    		})
+    		.attr("fill", "#66c2a5")
+
+    	// Create axes
+    	taxsvg.append("g")
+    		.attr("class", "xaxis")
+    		.attr("transform", "translate(0," + (htax - padding) + ")")
+    		.call(xAxis);
+    </script>
+    <script>
+        // Based off of Mike Bostock's Grouped Bar Chart Block, found here:
+        // https://bl.ocks.org/mbostock/3887051
+    	// Set constants
+    	var w = 500;
+    	var h = 200;
+
+    	var svg = d3.select("#taxsvg2"),
+            margin = {top:20, right:20, bottom:30, left:40},
+            width = +svg.attr("width") - margin.left - margin.right,
+            height = +svg.attr("height") - margin.top - margin.bottom,
+            g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var dataset;
+
+        // Create axes
+        var x0 = d3.scaleBand()
+            .rangeRound([0, width])
+            .paddingInner(0.1);
+
+        var x1 = d3.scaleBand()
+            .padding(0.05);
+
+        var y = d3.scaleLinear()
+            .rangeRound([height, 0]);
+
+        var z = d3.scaleOrdinal()
+            .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c"]);
+
+        d3.csv("./data/scstaxrate.csv", function(d, i, columns) {
+            for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
+                return d;
+        }, function(error, data) {
+            if (error) throw error;
+        
+            var keys = data.columns.slice(1);
+
+            x0.domain(data.map(function(d) { return d.year; }));
+            x1.domain(keys).rangeRound([0, x0.bandwidth()]);
+            // This returns the max key value across all keys and all data points
+            y.domain([0, d3.max(data, function(d) {
+                return d3.max(keys, function(key) {
+                    return d[key];
+                }); 
+            })]).nice();
+
+            // Plot bars
+            g.append("g")
+                .selectAll("g")
+                .data(data)
+                .enter().append("g") // for each obs, append a 'g' object
+                    .attr("transform", function(d) {
+                        return "translate(" + x0(d.year) + ",0)"; })
+                    .selectAll("rect")
+                    .data(function(d) { // Return a separate data (row) per obs
+                        return keys.map(function(key) {
+                            return { key : key, value: d[key] };
+                        });
+                    })
+                    .enter().append("rect")
+                        .attr("x", function(d) { return x1(d.key); })
+                        .attr("y", function(d) { return y(d.value); })
+                        .attr("width", x1.bandwidth())
+                        .attr("height", function(d) { return height - y(d.value); })
+                        .attr("fill", function(d) { return z(d.key); });
+
+            g.append("g")
+                .attr("class", "axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x0));
+
+            g.append("g")
+                .attr("class", "axis")
+                .call(d3.axisLeft(y).ticks(null, "s"))
+                .append("text")
+                .attr("x", 2)
+                .attr("y", y(y.ticks().pop()) + 0.5) // Get position of last tick + 0.5
+                .attr("dy", "0.32em")
+                .attr("fill", "#000")
+                .attr("font-weight", "bold")
+                .attr("text-anchor", "start")
+                .text("Tax Rate")
+                    
+
+                    });
+            
+
+
+
+
+
+    </script>
+    <script>
+
+		// BEGIN PIE LAYOUT
+			var voteprop = [ 66, 33 ];
+
+			var pie = d3.pie();
+			/* pie(dataset) generates objects from our dataset */
+
+			var w = 150;
+			var h = 150;
+			var outerRadius = w / 2;
+			var innerRadius = 0;
+			var arc = d3.arc()
+				.innerRadius(innerRadius)
+				.outerRadius(outerRadius);
+
+			// Create a color scale
+			var color = d3.scaleOrdinal(d3.schemeSet2);
+
+			// Create SVG element
+			var svg = d3.select("#svg1")
+				.append("svg")
+				.attr("width", w)
+				.attr("height", h);
+
+			// Set up groups
+			var arcs = svg.selectAll("g.arc")
+				.data(pie(voteprop))
+				.enter()
+				.append("g")
+				.attr("class", "arc")
+				.attr("transform", "translate(" + outerRadius + ", " + outerRadius + ")");
+
+			arcs.append("path")
+				.attr("fill", function(d,i) {
+					return color(i);
+				})
+				.attr("d", arc);
+
+			arcs.append("text")
+				.attr("transform", function(d) {
+					return "translate(" + arc.centroid(d) + ")";
+				})
+				.attr("text-anchor", "middle")
+				.text(function(d) {
+					return d.value;
+				});
+
+		// Shelby County Education Budget Breakdown
+			var totalBudget = 361288000;
+			var fundshare2010 = [ 0.6867, 0.3133 ];
+			var fundshare2011 = [ 0.6906, 0.3094 ];
+			var fundshare2012 = [ 0.6924, 0.3076 ];
+			var fundshare2013 = [ 0.6800, 0.3200 ];
+			var fundshare2014 = [ 1 ];
+			var fundshare2015 = [
+				{ school : "SCS", share: 0.7916 },
+				{ school : "Arlington", share: 0.0347 },
+				{ school : "Bartlett", share: 0.0606 },
+				{ school : "Collierville", share: 0.0513 },
+				{ school : "Germantown", share: 0.0369 },
+				{ school : "Lakeland", share: 0.0056 },
+				{ school: "Millington", share: 0.0193}
+				];
+
+			// Append SVG element
+			var svg2 = d3.select("#svg2")
+				.append("svg")
+				.attr("width", w)
+				.attr("height", h)
+
+			// Set up groups
+			var arcs2 = svg2.selectAll("g.arc")
+				.data(pie(fundshare2013))
+				.enter()
+				.append("g")
+				.attr("class","arc")
+				.attr("transform", "translate(" + outerRadius +", " + outerRadius + ")");
+
+			arcs2.append("path")
+				.attr("fill", function(d,i) {
+					return color(i);
+				})
+				.attr("d", arc)
+
+			// Append SVG element
+			var svg3 = d3.select("#svg2")
+				.append("svg")
+				.attr("width", w)
+				.attr("height", h)
+
+			// Set up groups
+			var arcs3 = svg3.selectAll("g.arc")
+				.data(pie(fundshare2014))
+				.enter()
+				.append("g")
+				.attr("class","arc")
+				.attr("transform", "translate(" + outerRadius +", " + outerRadius + ")");
+
+			arcs3.append("path")
+				.attr("fill", function(d,i) {
+					return color(i);
+				})
+				.attr("d", arc)
+
+			// 2015 - Post-Merger
+			var svg2015 = d3.select("#svg2")
+				.append("svg")
+				.attr("width", w)
+				.attr("height", h)
+
+			// Set up groups
+			var arcs2015 = svg2015.selectAll("g.arc")
+				.data(pie(fundshare2015.map(function(d) { return d.share; }) ))
+				.enter()
+				.append("g")
+				.attr("class","arc")
+				.attr("transform", "translate(" + outerRadius +", " + outerRadius + ")");
+
+			arcs2015.append("path")
+				.attr("fill", function(d,i) {
+					return color(i);
+				})
+				.attr("d", arc)
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    </body>
+</html>

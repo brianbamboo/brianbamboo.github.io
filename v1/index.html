@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+	<head>
+		<title>Brian Wang's CME151A Webpage</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="stylesheet.css">
+	</head>
+	<body>
+		<div class="container">
+			<div id="description">
+				<h1>My Stanford Webpage</h1>
+				<p>This is my visualization portfolio for CME 151A, a class at <a href="http://www.stanford.edu">Stanford</a>. I am currently studying for an M.S. Statistics. Some of my interests include education,
+				music, reading, and trying out new places to eat!</p>
+			</div>
+			<div id="information">
+				<h1>My Information</h1>
+				<img src="personalphoto.jpg" width="200px" title="A picture I took at the Fall Career Fair!"/>
+				<p>Name: Brian Wang<br>
+				E-mail: <a href="mailto:bwang16@stanford.edu">bwang16@stanford.edu</a></p>
+			</div>
+		</div>
+
+		<div class="container" style="clear:both;">
+	
+			<script type="text/javascript">	// JavaScript for bouncing animation
+				function bounce() {
+					var elem = document.getElementById("animate");
+					var pos = 51;
+					var rebound = false;
+					var id = setInterval(frame, 5);
+
+					function frame() {
+						if (pos == 50) {
+							clearInterval(id);
+						} else if (rebound == false && pos < 150) {
+							pos++;
+							elem.style.cy = pos + 'px';
+						} else {
+							rebound = true;
+							pos--;
+							elem.style.cy = pos + 'px';
+						}
+					}
+				}
+			</script>
+
+			<div id="animation">	
+				<h1>My JavaScript Animation</h1>
+				<p>Here is a simple JavaScript animation. Click on the circle, and the circle will bounce!</p>		
+				<svg height="250">
+					<circle onclick="bounce()" id="animate" cx='50' cy='50' r='30' stroke='blue' stroke-width='4' fill='yellow' />
+				</svg>
+			</div>
+
+			<div id="fourth">
+				<h1>More Projects</h1>
+				<p>Here is a <a href="cme195.html">link</a> to a project I completed in Fall 2016 for CME195: Introduction To R.</p>
+				<p>Here is a link to <a href="WS2.html">Workshop 2</a> for CME151A.</p>
+				<p><a href="finalproject.html">Final Project</p>
+			</div>
+		</div>
+
+	</body>
+</html>
+
