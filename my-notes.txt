@@ -2,3 +2,6 @@ this is just for me.
 
 v1 was created april 2017 for cme151a.
 v2 was created july 2017 using bootstrap.
+v3 was created july 2017 using bootstrap.
+v4 updated design and star effect.
+v5 added angular.js.

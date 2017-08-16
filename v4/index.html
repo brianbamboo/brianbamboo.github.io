@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Brian Wang</title>
+
+		<!-- d3.js (v4) -->
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+
+		<!-- CSS Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+		<!-- Optional Bootstrap theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- Custom stylesheet -->
+		<link rel="stylesheet" href="stylesheet.css">
+
+	</head>
+	<body>
+
+		<div class="star-container">
+			<svg id="star-svg">
+			</svg>
+		</div>
+
+		<!-- Navbar -->
+		<nav class="navbar fixed-top navbar-toggleable-md custom-toggler" style="background-color:rgb(25,25,50);min-height:55px">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+
+			<div class ="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item" >
+						<a class="nav-link" href="#">Projects</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">Resume</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">Blog</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="main">
+			<span>brian wang</span>
+			<div class="subtext">a falling starfield / portfolio</div>
+			<button class="btn btn-default" id="starfall" style="float:right;">Starfall</button>
+			<div class="social-buttons">
+				<a href="#"><i class="fa fa-file-text-o"></i></a> 
+	            <a href="#"><i class="fa fa-twitter"></i></a> 
+	            <a href="#"><i class="fa fa-linkedin"></i></a>
+	            <a href="#"><i class="fa fa-yelp"></i></a>
+	        </div>
+		</div>
+
+		<div class="bot-right">
+			<a href="#" id="regenerate"><span>Regenerate stars</span></a>
+		</div>
+
+		<div class="container-fluid main-content">
+			<div class="row">
+				<div class="col-sm-6 text-left">
+					<h2><em>About me</em></h2>
+					<p>Hello! I'm currently a master's student at Stanford studying statistics, and
+					you've stumbled across my portfolio page.  I'm currently working as a Marketing and Data Fellow 
+					for a charter school in Memphis through Education Pioneers. This is where you can find some examples of the work I've done, as well as other personal projects and random things.</p>
+
+					<p>I graduated from UCLA in 2014. Some of my interests include education, data visualization, and linear models. In my free time I enjoy music, reading, and trying out new places to eat.</p>
+
+					
+				</div>
+				<div class="col-sm-6 text-left">
+					<h2><em>About the design</em></h2>
+					<p>The starfield design of this page arose a bit inadvertently. I was experimenting with jQuery and Javascript, trying to see
+					what I was able to do with it graphically, and I ended up creating a starfield with
+					a (sort-of) parallax effect, which was a lot cooler (to me) than what I was setting out for.</p>
+
+					<p>The starfall effect is created with d3. I think it's pretty neat.</p>
+				</div>
+			</div>
+
+			<hr/>
+
+			<!-- Project Content -->
+			<div class="row projects">
+				<div class="col-sm-12">
+                    <h1 class="text-center">PROJECTS</h1>
+
+                    <hr/>
+                    <!-- start -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="text-wrapper2">
+                                <a href="../salaries.html"><h5>An Analysis of City of Chicago Employee Salaries</h5></a>
+                                <em>July 2017</em>
+                                <p>For this project, I analyzed a dataset on city of Chicago employee salaries, created some data visualizations and learned that there is a person in Chicago that earns an annual salary of $1. For real. It's a thing.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-center">
+                                <img class="project rounded" src="../assets/proj5.png">
+                            </div>     
+                        </div>
+                    </div>
+
+                    <br><br>
+
+
+                     <div class="row">
+                        <div class="col-sm-6">
+                            <div class="text-wrapper2">
+                                <a href="../../quote-generator/quote-generator.html"><h5>Miyazaki Quote Generator</h5></a>
+                                <em>July 2017</em>
+                                <p>For this project, we used d3 to create an interactive scatterplot. This project was part of a class at Stanford, CME151A: Interactive Visualization using d3.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-center">
+                                <img class="project rounded" src="../assets/proj4.png">
+                            </div>     
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="text-wrapper2">
+                                <a href="../memphis.html"><h5>The Merger of Memphis City and Shelby County Schools</h5></a>
+                                <em>July 2017</em>
+                                <p>I was in Memphis this summer and found myself interested in understanding the politics of the MCS-SCS merger, where the Memphis City and Shelby County Districts merged and six suburban municipalities subsequently broke off to form their own districts.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-center">
+                                <img class="project rounded" src="../assets/proj1.png">
+                            </div>     
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="text-wrapper2">
+                                <h5>Visualization of Pokemon Attributes using d3.js</h5>
+                                <em>May 2017</em>
+                                <p>For this project, we used d3 to create an interactive scatterplot. This project was part of a class at Stanford, CME151A: Interactive Visualization using d3.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-center">
+                                <img class="project rounded" src="../assets/proj1.png">
+                            </div>     
+                        </div>
+                    </div>
+
+                    <br><br>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="text-wrapper2">
+                                <h5>Visualization of Student Alcohol Consumption</h5>
+                                <em>April 2017</em>
+                                <p>For this project, I used d3 to create an interactive barplot. This project was part of a class at Stanford, CME151A: Interactive Visualization using d3.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-center">
+                                <img class="project rounded" src="../assets/proj2.png">
+                            </div>
+                        </div>
+                    </div>
+	            </div>
+			</div>
+
+			<hr/>
+
+			<div class="row">
+				<div class="col-sm-6 text-left">
+					<h2><em>Time traveler</em></h2>
+					<p>This is a fun section I keep here mainly just for me (but also for you!), where you can access older versions
+					of this webpage. Click on these links to see how this website has changed over time as I've
+					updated the design and added content.</p>
+					<ul>
+						<li><a href="../v1/index.html">Version 1</a></li>
+						<li><a href="../v2/index.html">Version 2</a></li>
+						<li><a href="../v3/index.html">Version 3</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-6 text-left">
+					<h2><em>Contact me</em></h2>
+					<ul>
+						<li>E-mail: bwang16(at)stanford(dot)edu</li>
+						<li>House: Hufflepuff (send me an owl!)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+		<!-- tether.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+		<!-- Bootstrap.js -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+		<!-- jQuery script -->
+		<script>
+			var generateStars = function() {
+
+				var numStars = 200;
+
+				for (var i = 0; i < numStars; i++) {
+					var width = $(".star-container").width();
+					var height = $(".star-container").height();
+
+					d3.select("#star-svg")
+						.append("circle")
+						.attr("class", "star")
+						.attr("r", 2)
+						.attr("cx", Math.random() * width)
+						.attr("cy", Math.random() * height);
+				}
+
+				return;
+			}
+
+			var starFall = function() {
+				var width = $(".star-container").width();
+				var height = $(".star-container").height();
+
+
+				d3.selectAll("circle")
+					.transition()
+					.delay(function(d, i) {
+						return i * 5;
+					})
+					.attr("cy", 510);
+
+				d3.selectAll("circle")
+					.transition()
+					.delay(function(d, i) {
+						return i * 100;
+					})
+					.on("start", function() {
+						d3.select(this)
+						.attr("cx", Math.random() * width)
+						.attr("cy", Math.random() * height);
+					});
+			}
+
+			$(document).ready(function() {
+				/* Initialize star-container to size of window */
+				$(".star-container").width($(window).width());
+				$(".star-container").height($(window).height());
+
+				/* Initialize stars */
+				generateStars();
+
+				/* As window resizes, change star-container to size of window
+				and regenerate stars */
+				$(window).resize(function() {
+					$(".star-container").width($(window).width());
+					$(".star-container").height($(window).height());
+
+					d3.selectAll("circle")
+						.remove();
+
+					generateStars();
+				});
+
+				/* On click, regenerate stars */
+				$("#regenerate").on("click", function() {
+					d3.selectAll("circle")
+						.remove();
+
+					generateStars();
+				})
+
+				$("#starfall").on("click", function() {
+					starFall();
+				})
+			});
+		</script>
+	</body>
+</html>

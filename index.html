@@ -6,7 +6,28 @@
 		<title>Brian Wang</title>
 
 		<!-- d3.js (v4) -->
-		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>	
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+		<!-- tether.js -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+		<!-- Bootstrap.js -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+		<!-- Stars.js -->
+		<script src="js/stars.js"></script>
+
+		<!-- ANGULAR.JS -->
+      	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+      	<!-- ANGULAR ANIMATE -->
+      	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.2/angular-animate.min.js"></script>
+
+     	 <!-- ANGULAR APP -->
+      	<script src="js/app.js"></script>
 
 		<!-- CSS Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -15,7 +36,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 		<!-- Font Awesome -->
-		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- Custom stylesheet -->
 		<link rel="stylesheet" href="css/stylesheet.css">
@@ -63,7 +84,7 @@
 			<div class="social-buttons">
 				<a href="#"><i class="fa fa-file-text-o"></i></a> 
 	            <a href="#"><i class="fa fa-twitter"></i></a> 
-	            <a href="#"><i class="fa fa-linkedin"></i></a>
+	            <a href="https://www.linkedin.com/in/brian-wang-75b6a64b/"><i class="fa fa-linkedin"></i></a>
 	            <a href="#"><i class="fa fa-yelp"></i></a>
 	        </div>
 		</div>
@@ -97,99 +118,33 @@
 			<hr/>
 
 			<!-- Project Content -->
-			<div class="row projects">
+			<div ng-app="PortfolioApp" ng-controller="MainCtrl" class="row projects">
 				<div class="col-sm-12">
                     <h1 class="text-center">PROJECTS</h1>
 
                     <hr/>
-                    <!-- start -->
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="text-wrapper2">
-                                <a href="salaries.html"><h5>An Analysis of City of Chicago Employee Salaries</h5></a>
-                                <em>July 2017</em>
-                                <p>For this project, I analyzed a dataset on city of Chicago employee salaries, created some data visualizations and learned that there is a person in Chicago that earns an annual salary of $1. For real. It's a thing.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-center">
-                                <img class="project rounded" src="assets/proj5.png">
-                            </div>     
-                        </div>
-                    </div>
 
-                    <br><br>
-
-
-                     <div class="row">
-                        <div class="col-sm-6">
-                            <div class="text-wrapper2">
-                                <a href="../quote-generator/quote-generator.html"><h5>Miyazaki Quote Generator</h5></a>
-                                <em>July 2017</em>
-                                <p>For this project, we used d3 to create an interactive scatterplot. This project was part of a class at Stanford, CME151A: Interactive Visualization using d3.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-center">
-                                <img class="project rounded" src="assets/proj4.png">
-                            </div>     
-                        </div>
-                    </div>
-
-                    <br><br>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="text-wrapper2">
-                                <a href="memphis.html"><h5>The Merger of Memphis City and Shelby County Schools</h5></a>
-                                <em>July 2017</em>
-                                <p>I was in Memphis this summer and found myself interested in understanding the politics of the MCS-SCS merger, where the Memphis City and Shelby County Districts merged and six suburban municipalities subsequently broke off to form their own districts.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-center">
-                                <img class="project rounded" src="assets/proj1.png">
-                            </div>     
-                        </div>
-                    </div>
-
-                    <br><br>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="text-wrapper2">
-                                <h5>Visualization of Pokemon Attributes using d3.js</h5>
-                                <em>May 2017</em>
-                                <p>For this project, we used d3 to create an interactive scatterplot. This project was part of a class at Stanford, CME151A: Interactive Visualization using d3.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-center">
-                                <img class="project rounded" src="assets/proj1.png">
-                            </div>     
-                        </div>
-                    </div>
-
-                    <br><br>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="text-wrapper2">
-                                <h5>Visualization of Student Alcohol Consumption</h5>
-                                <em>April 2017</em>
-                                <p>For this project, I used d3 to create an interactive barplot. This project was part of a class at Stanford, CME151A: Interactive Visualization using d3.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-center">
-                                <img class="project rounded" src="assets/proj2.png">
-                            </div>
-                        </div>
+                    <div ng-repeat = "project in projects | limitTo:5">
+                    	<div class="row">
+                    		<div class="col-sm-2"></div>
+	                    	<div class="col-sm-5">
+	                    		<div class="text-wrapper2">
+			                    	<a href="{{project.link}}"><h5>{{project.title}}</h5></a>
+			                    	<em>{{project.date}}</em>
+			                    	<p>{{project.description}}</p>
+			                    </div>
+			                </div>
+	                    	<div class="col-sm-3">
+	                    		<div class="text-center">
+	                    			<img class="project rounded" src="{{project.image}}">
+	                    		</div>
+	                    	</div>
+	                    	<div class="col-sm-2"></div>
+	                    </div>
+	                    <hr/>
                     </div>
 	            </div>
 			</div>
-
-			<hr/>
 
 			<div class="row">
 				<div class="col-sm-6 text-left">
@@ -201,105 +156,16 @@
 						<li><a href="v1/index.html">Version 1</a></li>
 						<li><a href="v2/index.html">Version 2</a></li>
 						<li><a href="v3/index.html">Version 3</a></li>
+						<li><a href="v4/index.html">Version 4</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-6 text-left">
 					<h2><em>Contact me</em></h2>
 					<ul>
 						<li>E-mail: bwang16(at)stanford(dot)edu</li>
-						<li>House: Hufflepuff (send me an owl!)</li>
 					</ul>
 				</div>
 			</div>
 		</div>
-
-
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-
-		<!-- tether.js -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
-		<!-- Bootstrap.js -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-		<!-- jQuery script -->
-		<script>
-			var generateStars = function() {
-
-				var numStars = 200;
-
-				for (var i = 0; i < numStars; i++) {
-					var width = $(".star-container").width();
-					var height = $(".star-container").height();
-
-					d3.select("#star-svg")
-						.append("circle")
-						.attr("class", "star")
-						.attr("r", 2)
-						.attr("cx", Math.random() * width)
-						.attr("cy", Math.random() * height);
-				}
-
-				return;
-			}
-
-			var starFall = function() {
-				var width = $(".star-container").width();
-				var height = $(".star-container").height();
-
-
-				d3.selectAll("circle")
-					.transition()
-					.delay(function(d, i) {
-						return i * 5;
-					})
-					.attr("cy", 510);
-
-				d3.selectAll("circle")
-					.transition()
-					.delay(function(d, i) {
-						return i * 100;
-					})
-					.on("start", function() {
-						d3.select(this)
-						.attr("cx", Math.random() * width)
-						.attr("cy", Math.random() * height);
-					});
-			}
-
-			$(document).ready(function() {
-				/* Initialize star-container to size of window */
-				$(".star-container").width($(window).width());
-				$(".star-container").height($(window).height());
-
-				/* Initialize stars */
-				generateStars();
-
-				/* As window resizes, change star-container to size of window
-				and regenerate stars */
-				$(window).resize(function() {
-					$(".star-container").width($(window).width());
-					$(".star-container").height($(window).height());
-
-					d3.selectAll("circle")
-						.remove();
-
-					generateStars();
-				});
-
-				/* On click, regenerate stars */
-				$("#regenerate").on("click", function() {
-					d3.selectAll("circle")
-						.remove();
-
-					generateStars();
-				})
-
-				$("#starfall").on("click", function() {
-					starFall();
-				})
-			});
-		</script>
 	</body>
 </html>
