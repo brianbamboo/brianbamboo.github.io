@@ -62,7 +62,7 @@
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" href="#">Projects</a>
+            <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Resume</a>
@@ -71,7 +71,7 @@
             <a class="nav-link disabled" href="#">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -83,9 +83,9 @@
       <button class="btn btn-default" id="starfall" style="float:right;">Starfall</button>
       <div class="social-buttons">
         <a href="#"><i class="fa fa-file-text-o"></i></a> 
-              <a href="#"><i class="fa fa-twitter"></i></a> 
+              <a class="disabled ref="#"><i class="fa fa-twitter"></i></a> 
               <a href="https://www.linkedin.com/in/brian-wang-75b6a64b/"><i class="fa fa-linkedin"></i></a>
-              <a href="#"><i class="fa fa-yelp"></i></a>
+              <a href="https://www.yelp.com/user_details?userid=pNcdDv32YKCAso0O8QLq4w"><i class="fa fa-yelp"></i></a>
           </div>
     </div>
 
@@ -97,30 +97,25 @@
       <div class="row">
         <div class="col-sm-6 text-left">
           <h2><em>About me</em></h2>
-          <p>Hello! I'm currently a master's student at Stanford studying statistics, and
-          you've stumbled across my portfolio page.  I'm currently working as a Marketing and Data Fellow 
-          for a charter school in Memphis through Education Pioneers. This is where you can find some examples of the work I've done, as well as other personal projects and random things.</p>
+          <p>Hello! I'm currently a research engineer (if you're wondering what this means, I don't really know either, but what I do is help others analyze and understand numbers 🙂) at Verizon Media, and you've stumbled across my portfolio page. This is where you can find some examples of the work I've done, as well as other personal projects and random things. It's always a work in progress, and maintaining it is also a way for me to explore my interest in webpage design!</p>
 
-          <p>I graduated from UCLA in 2014. Some of my interests include education, data visualization, and linear models. In my free time I enjoy music, reading, and trying out new places to eat.</p>
-
+          <p>I completed my master's in statistics at Stanford in 2018, and graduated from UCLA in 2014. My experience includes stints in consulting, digital marketing. Some of my interests include education, data visualization, and linear models. In my free time I enjoy music, reading, and trying out new places to eat.</p>
           
         </div>
         <div class="col-sm-6 text-left">
           <h2><em>About the design</em></h2>
-          <p>The starfield design of this page arose a bit inadvertently. I was experimenting with jQuery and Javascript, trying to see
+          <p>The starfield design of this page arose a bit inadvertently (it's also kinda old, I hope to update it soon!) I was experimenting with jQuery and Javascript, trying to see
           what I was able to do with it graphically, and I ended up creating a starfield with
           a (sort-of) parallax effect, which was a lot cooler (to me) than what I was setting out for.</p>
 
           <p>The starfall effect is created with d3. I think it's pretty neat.</p>
         </div>
       </div>
-
       <hr/>
-
       <!-- Project Content -->
       <div ng-app="PortfolioApp" ng-controller="MainCtrl" class="row projects">
         <div class="col-sm-12">
-                    <h1 class="text-center">PROJECTS</h1>
+                    <h1 class="text-center"></a>PROJECTS</h1>
 
                     <hr/>
                     <div class="row">
@@ -195,10 +190,11 @@
             <li><a href="v4/index.html">Version 4</a></li>
           </ul>
         </div>
-        <div class="col-sm-6 text-left">
+        <a name="contact">
+        <div class="col-sm-12 text-left">
           <h2><em>Contact me</em></h2>
           <ul>
-            <li>E-mail: bwang16(at)stanford(dot)edu</li>
+            <li>E-mail: brianwang92(at)gmail(dot)com</li>
           </ul>
         </div>
       </div>
