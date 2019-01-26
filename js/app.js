@@ -29,12 +29,12 @@ var app = angular.module('PortfolioApp', []).controller('MainCtrl', ['$scope', f
 		},
 
 		{ title : 'Visualization of Pokemon Attributes using d3.js',
-		  link  : '#',
+		  link  : 'projects/pokemon.html',
 		  date  : 'May 2017',
 		  description : 'For this project, we used d3 to create an interactive scatterplot. This project was part of a class at Stanford, CME151A: Interactive Visualization using d3.',
-		  image : 'assets/proj2.png'
+		  image : 'assets/proj1.png'
 		},
-
+/*
 		{ title : 'Miyazaki Quote Generator',
 		  link  : '../quote-generator/quote-generator.html',
 		  date  : 'July 2017',
@@ -48,12 +48,12 @@ var app = angular.module('PortfolioApp', []).controller('MainCtrl', ['$scope', f
 		  description : "I was in Memphis this summer and found myself interested in understanding the politics of the MCS-SCS merger, where the Memphis City and Shelby County Districts merged and six suburban municipalities subsequently broke off to form their own districts.",
 		  image : 'assets/proj2.png'
 		},
-
+*/
 		{ title : 'Visualization of Student Alcohol Consumption',
-		  link  : '#',
+		  link  : 'projects/alcohol.html',
 		  date  : 'April 2017',
 		  description : "For this project, I used d3 to create an interactive barplot. This project was part of a class at Stanford, CME151A: Interactive Visualization using d3.",
-		  image : 'assets/proj1.png'
+		  image : 'assets/proj2.png'
 		}
 		  ];
 		}

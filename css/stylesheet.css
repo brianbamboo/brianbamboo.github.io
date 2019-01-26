@@ -78,7 +78,7 @@ circle.star {
 	fill: rgba(255,255,255,1);
 }
 
-a,button,h1,h2,h3,h4,h5 {
+a,button,h1,h2,h3,h4,h5,h6 {
 	font-family: Quicksand;
 }
 
@@ -87,7 +87,16 @@ a.nav-link {
 }
 
 img.project {
+	border: 1px dashed black;
+	border-radius:10%;
 	width:100%;
+}
+
+img.udacity {
+	bottom: 0;
+	border: 1px dashed black;
+	border-radius:10%;
+	width:90%;
 }
 
 .custom-toggler .navbar-toggler {
