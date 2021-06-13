@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+	<head>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/wsstylesheet.css">
+	</head>
+
+	<body>
+		<h1>Student Alcohol Consumption</h1>
+		<p>This data is obtained from <a href="https://www.kaggle.com/uciml/student-alcohol-consumption">https://www.kaggle.com/uciml/student-alcohol-consumption</a>. It is a survey of secondary school students from two schools in Portugal containing a lot of interesting social, gender, and study information about students, including weekday and weekend alcohol consumption on a scale of 1-5.</p>
+
+		<p id="description">First, I am interested in understanding the relationship of age vs. level of alcohol consumption in the survey data. That is, do younger students tend to drink more than older students in Portugal, or vice versa? In Portugal, there is no minimum for the drinking age.</p>
+
+		<p><b>Click on this switch to toggle between weekday alcohol consumption and weekend alcohol consumption.</b></p>
+		<label class="switch">
+		  <input type="checkbox">
+		  <div class="slider"></div>
+		</label>
+		<br>
+
+
+		<script type="text/javascript">
+		// Load data
+		var dataset_1;
+		var dataset_2;
+		var w_1 = 900;
+		var h_1 = 400;
+		var x_padding = 35;
+		var y_padding = 25;
+
+		var x0 = d3.scaleBand()
+				.rangeRound([x_padding, w_1 - x_padding - 100])
+				.paddingInner([0.1]);
+
+		var x1 = d3.scaleBand()
+			.padding(0.05);
+
+		var y = d3.scaleLinear()
+			.rangeRound([h_1 - y_padding, y_padding]);
+
+		var z = d3.scaleOrdinal()
+    		.range(["#2F32B4", "#6DEBE8", "#F3E973", "#FFBD32", "#FF5A32"]);
+
+		var svg_1 = d3.select("body").append("svg")
+				.attr("width", w_1)
+				.attr("height", h_1);
+
+		d3.csv("../data/age_dalc.csv", function(d) {
+			dataset_1 = d;
+
+			/* Maps factors of age to range */
+			x0.domain(dataset_1.map(function(d) { return d.age; })); 
+			/* Maps factors of Dalc to range */
+			x1.domain(dataset_1.map(function(d) { return d.Dalc; })).rangeRound([0, x0.bandwidth()]); 
+			/* Maps proportions to height range */
+			y.domain([0, d3.max(dataset_1, function(d) { return d.prop; })]);
+
+			// Plot bars	
+			svg_1.selectAll("g")
+				.data(dataset_1)
+				.enter()
+				.append("g")
+				.attr("transform", function(d) { return "translate(" + x0(d.age) + ",0)"; })
+				.selectAll("rect")
+				/* for each observation (row) d, returns an array of dictionaries of the form
+				[ { value: d.Dalc, prop: d.prop } ] */
+				.data(function(d) { return [{ value: d.Dalc, prop: d.prop }]; })
+				.enter().append("rect")
+					.attr("x", function(d) { return x1(d.value); })
+					.attr("y", function(d) { return y(d.prop); })
+					.attr("width", x1.bandwidth())
+					.attr("height", function(d) { return (h_1 - y_padding) - y(d.prop); })
+					.attr("fill", function(d) { return z(d.value); });
+
+			// Add bar labels with count for each category
+			svg_1.selectAll("g")
+				.data(dataset_1)
+				.selectAll("text")
+				.data(function(d) { return [{ value: d.Dalc, prop: d.prop, n: d.n }]; })
+				.enter().append("text")
+					.attr("x", function(d) { return x1(d.value) + x1.bandwidth() / 2; })
+					.attr("y", function(d) { return y(d.prop) - 5; })
+					.attr("font-family", "sans-serif")
+					.attr("font-size", 10)
+					.attr("font-weight", "bold")
+					.attr("text-anchor", "middle")
+					.text(function(d) { return d.n; });
+			
+
+			// Plot axes
+			svg_1.append("g")
+				.attr("class", "axis")
+				.attr("transform", "translate(0," + (h_1 - y_padding) + ")")
+				.call(d3.axisBottom(x0));
+
+			svg_1.append("g")
+				.attr("class", "axis")
+				.attr("transform", "translate(" + x_padding + ",0)")
+				.call(d3.axisLeft(y).tickFormat(d3.format(".0%")));
+
+			// Create a legend
+			var legend = svg_1.append("g")
+				.attr("id", "legend_container")
+				.attr("font-family", "helvetica")
+				.attr("font-size", 10)
+				.attr("text-anchor", "end")
+				.selectAll("g")
+				.data([ { key: 1, value: "Very Low" },
+						{ key: 2, value: "Low"},
+						{ key: 3, value: "Moderate"},
+						{ key: 4, value: "High"},
+						{ key: 5, value: "Very High"} ])
+				.enter().append("g")
+					.attr("transform", function(d, i) { return "translate(0," + (i + 1) * 25 + ")"; });
+
+				legend.append("rect")
+					/* This x value shifts the entire legend container */
+			      .attr("x", w_1 - 19)
+			      .attr("width", 19)
+			      .attr("height", 19)
+			      .attr("fill", function(d) { return z(d.key); });
+
+			    legend.append("text")
+			      .attr("x", w_1 - 24)
+			      .attr("y", 9.5)
+			      .attr("dy", "0.32em")
+			      .text(function(d) { return d.value; });
+
+			d3.select("#legend_container")
+			 	.append("text")
+			 	.attr("font-size", 14)
+			 	.attr("font-weight", "bold")
+			 	.attr("x", w_1)
+			 	.attr("y", 10)
+			 	.attr("text-anchor", "end")
+			 	.text("Legend");
+
+			svg_1.append("g")
+				.append("text")
+				.attr("id", "chart-title")
+				.attr("font-size", 16)
+				.attr("font-family", "helvetica")
+				.attr("font-weight", "bold")
+				.attr("x", (w_1 - 2 * x_padding) / 2)
+				.attr("y", 15)
+				.attr("width", 100)
+				.attr("height", 25)
+				.text("Weekday Alcohol Consumption")
+				.attr("text-anchor", "middle");
+		});
+
+		// Code for toggle transition
+		d3.select("input")
+			.on("click", function() {
+				if (this.checked == true) {
+					// Update with weekend data
+					d3.csv("../data/age_walc.csv", function(d) {
+						dataset_2 = d;
+
+					// Update scales
+					/* Maps factors of age to range */
+					x0.domain(dataset_2.map(function(d) { return d.age; })); 
+					/* Maps factors of Dalc to range */
+					x1.domain(dataset_2.map(function(d) { return d.Walc; })).rangeRound([0, x0.bandwidth()]); 
+					/* Maps proportions to height range */
+					y.domain([0, d3.max(dataset_2, function(d) { return d.prop; })]);
+
+					svg_1.selectAll("g")
+						.data(dataset_2)
+						.attr("transform", function(d) { return "translate(" + x0(d.age) + ",0)"; })
+						.selectAll("rect")
+						/* for each observation (row) d, returns an array of dictionaries of the form
+						[ { value: d.Dalc, prop: d.prop } ] */
+						.data(function(d) { return [{ value: d.Walc, prop: d.prop }]; })
+						.transition()
+							.attr("x", function(d) { return x1(d.value); })
+							.attr("y", function(d) { return y(d.prop); })
+							.attr("width", x1.bandwidth())
+							.attr("height", function(d) { return (h_1 - y_padding) - y(d.prop); })
+							.attr("fill", function(d) { return z(d.value); });
+
+					// Update labels
+					svg_1.selectAll("g")
+						.data(dataset_2)
+						.selectAll("text")
+						.data(function(d) { return [{ value: d.Walc, prop: d.prop, n: d.n }]; })
+						.transition()
+							.attr("x", function(d) { return x1(d.value) + x1.bandwidth() / 2; })
+							.attr("y", function(d) { return y(d.prop) - 5; })
+							.text(function(d) { return d.n; });
+
+					svg_1.select("#chart-title")
+						.transition()
+						.text("Weekend Alcohol Consumption");
+					});
+				} else {
+					// Update with weekday data
+					d3.csv("../data/age_dalc.csv", function(d) {
+						dataset_1 = d;
+
+					// Update scales
+					/* Maps factors of age to range */
+					x0.domain(dataset_1.map(function(d) { return d.age; })); 
+					/* Maps factors of Dalc to range */
+					x1.domain(dataset_1.map(function(d) { return d.Dalc; })).rangeRound([0, x0.bandwidth()]); 
+					/* Maps proportions to height range */
+					y.domain([0, d3.max(dataset_1, function(d) { return d.prop; })]);
+
+					svg_1.selectAll("g")
+						.data(dataset_1)
+						.attr("transform", function(d) { return "translate(" + x0(d.age) + ",0)"; })
+						.selectAll("rect")
+						/* for each observation (row) d, returns an array of dictionaries of the form
+						[ { value: d.Dalc, prop: d.prop } ] */
+						.data(function(d) { return [{ value: d.Dalc, prop: d.prop }]; })
+						.transition()
+							.attr("x", function(d) { return x1(d.value); })
+							.attr("y", function(d) { return y(d.prop); })
+							.attr("width", x1.bandwidth())
+							.attr("height", function(d) { return (h_1 - y_padding) - y(d.prop); })
+							.attr("fill", function(d) { return z(d.value); });
+
+					svg_1.selectAll("g")
+						.data(dataset_1)
+						.selectAll("text")
+						.data(function(d) { return [{ value: d.Dalc, prop: d.prop, n: d.n }]; })
+						.transition()
+							.attr("x", function(d) { return x1(d.value) + x1.bandwidth() / 2; })
+							.attr("y", function(d) { return y(d.prop) - 5; })
+							.text(function(d) { return d.n; });
+
+
+					svg_1.select("#chart-title")
+						.transition()
+						.text("Weekday Alcohol Consumption");
+					});
+				};
+			});
+		</script>
+
+		<p>From this data visualization, here are some possible observations that we can make about the relationship of age and amount of alcohol consumption.
+		<ul>
+			<li>On weekdays, students of all ages mostly report drinking very little (rating 1), with a slightly higher percentage of 17 and 18 year olds that self-report drinking at a rating of 2.</li>
+			<li>On weekends, students of all ages mostly report drinking at a higher level than they do on weekdays, with students aged 17-19 experiencing the greatest increases in level of drinking. For example, around 6% of students age 17 report drinking at a moderate level; this jumps to about 27% on the weekends.</li>
+		</p>
+	</body>
+</html>

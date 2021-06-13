@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body {
+	background-color: rgb(25, 25, 50);
+	font-size: 13px;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 25px;
+}
+
+div.main {
+	background-color: rgba(200, 200, 200, 0.8);
+	border-radius: 25px;
+	color: rgb(0, 0, 0);
+	font-family: Quicksand;
+	font-size: 60px;
+	width: ;
+	position:absolute;
+	margin: 13% auto 80% 20%;
+	padding: 15px;
+}
+
+div.subtext {
+	font-size:25px;
+	margin: auto auto 10px auto;
+}
+
+div.social-buttons {
+	margin: auto 10px auto auto;
+	padding: 5px;
+	font-size:15px;
+	float:right;
+}
+
+div.bot-right {
+	background-color: rgba(200,200,200,0.8);
+	width: 150px;
+	font-family: Quicksand;
+	border-radius:25px;
+	text-align: center;
+	padding: 5px;
+	position: fixed;
+	top: 450px;
+	right: 5px;
+}
+
+
+div.star-container {
+	background-color: rgba(200,200,200,0.2);
+	position:fixed;
+	top:0px;
+	left:0px;
+	width: 500px;
+	height: 500px;
+	max-height: 500px;
+}
+
+div.main-content {
+	background-color: rgba(255,255,255,1);
+	padding: 50px;
+	position: absolute;
+	top:500px;
+	color: #000;
+	width: 100%;
+}
+
+svg#star-svg {
+	width:100%;
+	height:100%;
+}
+
+circle.star {
+	fill: rgba(255,255,255,1);
+}
+
+a,button,h1,h2,h3,h4,h5,h6 {
+	font-family: Quicksand;
+}
+
+a.nav-link {
+	color:#FFF;
+}
+
+img.project {
+	border: 1px dashed black;
+	border-radius:10%;
+	width:100%;
+}
+
+img.udacity {
+	bottom: 0;
+	border: 1px dashed black;
+	border-radius:10%;
+	width:90%;
+}
+
+.custom-toggler .navbar-toggler {
+	border-color:#FFF;
+}
+
+.custom-toggler .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+i {
+	display:inline-block;
+	border-radius:55px;
+	padding: 10px 10px 10px 10px;
+	background-color:#888;
+	color:white;
+}
+
+i:hover {
+	background-color:#ddd;
+}
+
+.fa-twitter {
+	background-color:#00aced;
+}
+
+.fa-linkedin {
+	background-color:#007bb5;
+
+}
+
+.fa-yelp {
+	background-color:#c41200;
+}

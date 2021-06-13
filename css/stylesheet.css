@@ -1,16 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant&family=Crimson+Text:ital@1&display=swap');
 
 body {
-	background-color: rgb(25, 25, 50);
-	font-size: 13px;
+	background-color: rgb(222, 200, 150);
+	font-size: 45px;
 }
 
 h1 {
-	font-size: 30px;
+	font-family: Playfair Display;
+	font-size: 45px;
 }
 
 h2 {
-	font-size: 25px;
+	font-family: 'Crimson Text', serif;
+	font-size: 36px;
+}
+
+div.introtext {
+	color: rgb(0, 0, 0);
+	font-family: Assistant;
+	font-size: 20px;
+	width:500px;
+	padding:15px;
 }
 
 div.main {
@@ -61,10 +73,10 @@ div.star-container {
 }
 
 div.main-content {
-	background-color: rgba(255,255,255,1);
 	padding: 50px;
 	position: absolute;
-	top:500px;
+	left:25px;
+	top:25px;
 	color: #000;
 	width: 100%;
 }
@@ -78,7 +90,7 @@ circle.star {
 	fill: rgba(255,255,255,1);
 }
 
-a,button,h1,h2,h3,h4,h5,h6 {
+a,button,h3,h4,h5,h6 {
 	font-family: Quicksand;
 }
 

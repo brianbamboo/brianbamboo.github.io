@@ -39,165 +39,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet2.css">
 
   </head>
   <body>
-
-    <div class="star-container">
-      <svg id="star-svg">
-      </svg>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-toggleable-md custom-toggler" style="background-color:rgb(25,25,50);min-height:55px">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-      <div class ="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item" >
-            <a class="nav-link" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="main">
-      <span>brian wang</span>
-      <div class="subtext">a falling starfield / portfolio</div>
-      <button class="btn btn-default" id="starfall" style="float:right;">Starfall</button>
-      <div class="social-buttons">
-        <a href="#"><i class="fa fa-file-text-o"></i></a> 
-              <a class="disabled ref="#"><i class="fa fa-twitter"></i></a> 
-              <a href="https://www.linkedin.com/in/brian-wang-75b6a64b/"><i class="fa fa-linkedin"></i></a>
-              <a href="https://www.yelp.com/user_details?userid=pNcdDv32YKCAso0O8QLq4w"><i class="fa fa-yelp"></i></a>
-          </div>
-    </div>
-
-    <div class="bot-right">
-      <a href="#" id="regenerate"><span>Regenerate stars</span></a>
-    </div>
-
     <div class="container-fluid main-content">
-      <div class="row">
-        <div class="col-sm-6 text-left">
-          <h2><em>About me</em></h2>
-          <p>Hello! I'm currently a research engineer (if you're wondering what this means, I don't really know either, but what I do is help others analyze and understand numbers 🙂) at Verizon Media, and you've stumbled across my portfolio page. This is where you can find some examples of the work I've done, as well as other personal projects and random things. It's always a work in progress, and maintaining it is also a way for me to explore my interest in webpage design!</p>
+      <h1>a perpetual shift</h1>
+      <h2>&emsp;&emsp;&emsp;a life in &emsp;&emsp;&emsp; constant &emsp;&emsp;&emsp;motion</h2>
+      <div class="introtext">
 
-          <p>I completed my master's in statistics at Stanford in 2018, and graduated from UCLA in 2014. My experience includes stints in consulting, digital marketing. Some of my interests include education, data visualization, and linear models. In my free time I enjoy music, reading, and trying out new places to eat.</p>
-          
-        </div>
-        <div class="col-sm-6 text-left">
-          <h2><em>About the design</em></h2>
-          <p>The starfield design of this page arose a bit inadvertently (it's also kinda old, I hope to update it soon!) I was experimenting with jQuery and Javascript, trying to see
-          what I was able to do with it graphically, and I ended up creating a starfield with
-          a (sort-of) parallax effect, which was a lot cooler (to me) than what I was setting out for.</p>
+      Hey there. My name is Brian. If you're here, you've probably come here through a link on my resumé or something. I'm currently in the process of rethinking this space and what I want to do with it, so it's a bit empty for now. But welcome, regardless.
+      <br>
+      <br>
+      <h2>About me</h2>
+      I'm currently a data analyst at a consumer electronics company. Used to: learn statistics from some really smart people (teaching ability varied), run digital marketing campaigns. Since the pandemic started, I've developed a daily yoga and healthy movement practice which is big focus of mine right now. If you work a desk job, highly recommend! Take care of your body, please - it's the only one you've got.
 
-          <p>The starfall effect is created with d3. I think it's pretty neat.</p>
-        </div>
-      </div>
-      <hr/>
-      <!-- Project Content -->
-      <a name="projects"></a>
-      <div ng-app="PortfolioApp" ng-controller="MainCtrl" class="row projects">
-        <div class="col-sm-12">
-                    <h1 class="text-center"></a>PROJECTS</h1>
+      <br>
+      <br>
+      <h2>Time traveler</h2>
+      If you've come here in search of examples of my work, feel free to travel to past versions of this website below. Most likely you're looking for V5, but the archives go way back to when this place was nothing but black on white text and pictures. Please note that this hasn't been kept up to date, unfortunately. But if you want to learn more about me and my current work, feel free to reach out! Always open to connect.
+      <br>
+      <a href="v1/index.html">V1</a> |
+      <a href="v2/index.html">V2</a> |
+      <a href="v3/index.html">V3</a> |
+      <a href="v4/index.html">V4</a> |
+      <a href="v5/index.html">V5</a>
+      <br>
+      <br>
+      <h2>Contact me</h2>
+      E-mail me: brianwang92(at)gmail(dot)com
 
-                    <hr/>
-                    <div class="row">
-                      <div class="col-sm-2"></div>
-                      <div class="col-sm-8">
-                        <h5>Udacity Data Scientist Nanodegree Term 1</h5>
-                        <em>July 2018 - Oct 2018</em>
-                        <p>In Fall 2018, I personally enrolled in and completed the curriculum for Term 1 of the Udacity Data Scientist Nanodegree of part of ongoing education for myself; am possibly considering finishing up the program with Term 2 sometime. Personally, I wouldn't recommend this program if you're interested in a deeper understanding of the topics, since it focuses mainly on high-level conceptual understanding and model implementation. For me, the program was good practice for practical implementation as well as a light refresher on many topics I had learned in school. It consisted of the following three projects:</p>
-                      </div>
-                      <div class="col-sm-2"></div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-sm-2"></div>
-                      <div class="col-sm-2">
-                        <a href="projects/udacity/finding_donors.html" style="font-size:14px">Project 1: Finding Donors for CharityML</a>
-                        <hr/>
-                        <p style="font-size:11px">The main goal of this project was to use scikit-learn to implement a few supervised learning algorithms for a binary classification task. Included exercises on data preprocessing, model training and evaluation, and explaining pros/cons of each algorithm.</p>
-                        <img class="rounded udacity" src="assets/udacity1.png">
-                        <hr/>
-                      </div>
-                      <div class="col-sm-2">
-                        <a href="projects/udacity/image_classifier_project.html" style="font-size:14px">Project 2: PyTorch for Flower Classification</a>
-                        <hr/>
-                        <p style="font-size:11px">The main goal of this project was to use PyTorch to build an image classifier. Adapted a pre-trained model (vgg19) for the task, performed image processing and inference. Finally, created command line (Python) scripts for <a href="https://github.com/brianbamboo/DSND_Term1/blob/master/proj2/train.py">training</a> and <a href="https://github.com/brianbamboo/DSND_Term1/blob/master/proj2/predict.py">prediction</a>.</p>
-                        <img class="rounded udacity" src="assets/udacity2.png">
-                        <hr/>
-                      </div>
-                      <div class="col-sm-4">
-                        <a href="projects/udacity/identify_customer_segments.html" style="font-size:14px">Project 3: K-means Clustering for Customer Segmentation</a>
-                        <hr/>
-                        <p style="font-size:11px">The main goal of this project was to use k-means clustering to identify customer segments. Included missing data and outlier handling, feature engineering and transformation, and evaluation of clustering results.</p>
-                        <img class="rounded udacity" src="assets/udacity3.png">
-                        <hr/>
-                      </div>
-                    </div>
-
-                    <hr/>
-                    <div ng-repeat = "project in projects | limitTo:7">
-                      <div class="row">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm-5">
-                          <div class="text-wrapper2">
-                            <a href="{{project.link}}"><h5>{{project.title}}</h5></a>
-                            <em>{{project.date}}</em>
-                            <p>{{project.description}}</p>
-                          </div>
-                      </div>
-                        <div class="col-sm-3">
-                          <div class="text-center">
-                            <img class="rounded project" src="{{project.image}}">
-                          </div>
-                        </div>
-                        <div class="col-sm-2"></div>
-                      </div>
-                      <hr/>
-                    </div>
-              </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-6">
-          <h2><em>Time traveler</em></h2>
-          <p>This is a fun section I keep here mainly just for me (but also for you!), where you can access older versions
-          of this webpage. Click on these links to see how this website has changed over time as I've
-          updated the design and added content.</p>
-          <ul>
-            <li><a href="v1/index.html">Version 1</a></li>
-            <li><a href="v2/index.html">Version 2</a></li>
-            <li><a href="v3/index.html">Version 3</a></li>
-            <li><a href="v4/index.html">Version 4</a></li>
-          </ul>
-        </div>
-        <a name="contact"></a>
-        <div class="col-sm-6">
-          <h2><em>Contact me</em></h2>
-          <ul>
-            <li>E-mail: brianwang92(at)gmail(dot)com</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </body>
 </html>
